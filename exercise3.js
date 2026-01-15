@@ -8,13 +8,31 @@
 
 
 class Employee {
-  // YOUR CODE HERE
+  #name
+  #position
+
+  constructor(name, position){
+    this.#name = name;
+    this.#position = position;
+  }
+
+  introduce(){
+    return `Hi, I'm ${this.#name}, a ${this.#position}`
+  }
 }
 
 class Manager extends Employee {
-  // YOUR CODE HERE
-}
+  #department
 
+  constructor(name, position, department){
+    super(name, position);
+    this.#department = department;
+  }
+
+  introduce(){
+    return `${super.introduce()} in the ${this.#department} department`
+  }
+}
 
 // Test Code / Driver Code
 const manager = new Manager("Alice", "Manager", "Sales");
